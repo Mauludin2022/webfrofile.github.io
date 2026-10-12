@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Profil pribadi saya sebagai Web Developer" />
+    <title>Profil Pribadi - Mauludin</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background: white;
+        border-radius: 20px;
+        padding: 60px 40px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .profile-header img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 6px solid #667eea;
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .profile-header img:hover {
+        transform: scale(1.05) rotate(5deg);
+      }
+
+      .profile-header h1 {
+        font-size: 2.5rem;
+        margin: 20px 0 10px;
+        color: #2d3748;
+        font-weight: 700;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        color: #667eea;
+        font-weight: 500;
+      }
+
+      nav {
+        background: white;
+        border-radius: 50px;
+        padding: 15px 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #4a5568;
+        padding: 10px 25px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      nav ul li a:hover {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      main {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      section {
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid #e2e8f0;
+      }
+
+      section:last-child {
+        border-bottom: none;
+      }
+
+      section h2 {
+        font-size: 2rem;
+        color: #2d3748;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      section h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 2px;
+      }
+
+      #keahlian ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      #keahlian ul li {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        font-weight: 500;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+
+      #keahlian ul li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+      }
+
+      .project {
+        background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        border: 2px solid #e2e8f0;
+        transition: all 0.3s ease;
+      }
+
+      .project:hover {
+        border-color: #667eea;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        transform: translateY(-5px);
+      }
+
+      .project a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 25px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      #kontak ul {
+        list-style: none;
+      }
+
+      #kontak ul li {
+        padding: 15px 0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      #kontak a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      footer {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .social-links a {
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        .profile-header h1 {
+          font-size: 2rem;
+        }
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+        #keahlian ul {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="profile-header">
+          <img src="user.JPG" alt="Foto Profil" width="200" height="200" />
+          <h1>Mauludin</h1>
+          <p class="tagline">Web Developer | Designer | Content Creator</p>
+        </div>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#keahlian">Keahlian</a></li>
+          <li><a href="#pendidikan">Pendidikan</a></li>
+          <li><a href="#portofolio">Portofolio</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section id="tentang">
+          <h2>Tentang Saya</h2>
+          <p>Halo! Saya adalah seorang web developer yang passionate dalam menciptakan pengalaman digital yang menarik dan fungsional.</p>
+        </section>
+
+        <section id="keahlian">
+          <h2>Keahlian</h2>
+          <ul>
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript (ES6+)</li>
+            <li>Responsive Web Design</li>
+            <li>Git & Version Control</li>
+          </ul>
+        </section>
+
+        <section id="pendidikan">
+          <h2>Pendidikan</h2>
+          <article>
+            <h3>Sarjana Teknik Informatika</h3>
+            <p><strong>Universitas Indonesia</strong></p>
+            <p>2018 - 2022</p>
+          </article>
+        </section>
+
+        <section id="portofolio">
+          <h2>Portofolio</h2>
+          <div class="project">
+            <h3>Website E-Commerce</h3>
+            <p>Platform jual-beli online dengan fitur lengkap.</p>
+            <a href="#" target="_blank">Lihat Proyek</a>
+          </div>
+        </section>
+
+        <section id="kontak">
+          <h2>Hubungi Saya</h2>
+          <ul>
+            <li>Email: <a href="mailto:nama@email.com">akhdannafish@email.com</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/username">Mauludin</a></li>
+            <li>GitHub: <a href="https://github.com/username">Mauludin1986</a></li>
+          </ul>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Mauludin. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
